@@ -1,0 +1,49 @@
+﻿@model QLBanhang.Models.HoaDon
+@using QLBanhang.Models;
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết hóa đơn</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ngày lập hóa đơn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayLapHD)
+        </dd>
+
+        <dt>
+            Ngày giao hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGiaoHang)
+        </dd>
+
+        <dt>
+            Tên khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.TenKH)
+        </dd>
+
+        <dt>
+            Nhân viên bán hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhanvien.HoNV)
+            @Html.DisplayFor(model => model.Nhanvien.Ten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Trở về trang danh mục hóa đơn", "Index")
+</p>

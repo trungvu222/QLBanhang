@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QLBanhang.Models.KhachHang>
+@using QLBanhang.Models
+@{
+    ViewBag.Title = "Khách hàng";
+}
+
+<h2>DANH MỤC KHÁCH HÀNG</h2>
+
+<p>
+    @Html.ActionLink("Thêm khách hàng", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã khách hàng
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Điện thoại
+        </th>
+        <th>
+            Thư điện
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modeItem => item.MaKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaKH }) |
+            @Html.ActionLink("Xem chi tiết", "Details", new { id=item.MaKH }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaKH })
+        </td>
+    </tr>
+}
+
+</table>
